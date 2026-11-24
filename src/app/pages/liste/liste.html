@@ -1,0 +1,10 @@
+<h1>Événements</h1>
+<p class="compteur-favoris">Favoris : {{ favoris().length }}</p>
+
+<div class="grille">
+  @for (e of evenements(); track e.id) {
+    <app-carte-evenement [evenement]="e" (favori)="ajouterFavori($event)" />
+  } @empty {
+    <p>Aucun événement ne correspond à votre recherche</p>
+  }
+</div>

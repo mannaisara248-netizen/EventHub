@@ -1,0 +1,15 @@
+<article class="carte" [class.termine]="termine()">
+  <app-badge-categorie [categorie]="evenement().categorie" />
+
+  @if (termine()) {
+    <span class="mention-termine">Terminé</span>
+  }
+
+  <h3>{{ evenement().titre }}</h3>
+  <p class="club">{{ evenement().club }}</p>
+  <p>{{ evenement().date | date: 'EEE d MMM y, HH:mm' }}</p>
+  <p>{{ evenement().lieu }}</p>
+  <p>{{ evenement().gratuit ? 'Gratuit' : 'Payant' }}</p>
+
+  <button type="button" (click)="ajouterAuxFavoris()">Ajouter aux favoris</button>
+</article>
